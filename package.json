@@ -1,8 +1,23 @@
 {
   "name": "use-tailwind-screen",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "kimchangduk",
+    "email": "kimchangduk92@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/kcd71461/use-tailwind-screen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kcd71461/use-tailwind-screen"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
+    "@craco/craco": "^6.4.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -17,10 +32,11 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "craco start",
+    "build": "rm -rf ./dist && tsc",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "prepare": "yarn build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +55,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/tailwindcss": "^3.0.4",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.18",
+    "tailwindcss-debug-screens": "^2.2.1"
   }
 }
