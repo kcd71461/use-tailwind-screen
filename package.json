@@ -18,7 +18,9 @@
   ],
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
-  "dependencies": {},
+  "dependencies": {
+    "tailwindcss": "^3.0.18"
+  },
   "scripts": {
     "dev": "craco start",
     "build": "rm -rf ./dist && tsc",
