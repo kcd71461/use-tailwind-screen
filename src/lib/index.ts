@@ -47,5 +47,5 @@ function checkConfigInitialized() {
 
 let _config: TailwindConfig | null = null;
 
-export { default } from "./useTailwindScreen";
+export { default as useTailwindScreen } from "./useTailwindScreen";
 export { default as useMatchScreen } from "./useMatchScreen";
