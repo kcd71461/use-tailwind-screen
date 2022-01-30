@@ -8,6 +8,10 @@ export function setTailwindConfig(config: any) {
 export function getCurrentScreen(): string | null {
   checkConfigInitialized();
 
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   const screens = _config!.theme.screens! as any;
   for (let key of Object.keys(screens).reverse()) {
     if (window.matchMedia(`(min-width: ${screens[key] as string})`).matches) {
@@ -20,6 +24,10 @@ export function getCurrentScreen(): string | null {
 
 export function matchScreen(screenName: string) {
   checkConfigInitialized();
+
+  if (typeof window === "undefined") {
+    return false;
+  }
 
   const screens = _config!.theme.screens! as any;
   if (!screens[screenName]) {

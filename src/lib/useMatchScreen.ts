@@ -4,6 +4,9 @@ import { matchScreen } from ".";
 export default function useMatchScreen(screenName: string) {
   const [matched, setMatched] = useState(matchScreen(screenName));
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
     const onResize = () => {
       if (matched !== matchScreen(screenName)) {
         setMatched(!matched);
