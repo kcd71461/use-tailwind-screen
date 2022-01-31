@@ -1,5 +1,5 @@
 import React from "react";
-import { useMatchScreen } from "./lib";
+import { getScreens, useMatchScreen } from "./lib";
 import useTailwindScreen from "./lib/useTailwindScreen";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <h1>screen1 matched: {screen1Matched.toString()}</h1>
       <h1>screen2 matched: {screen2Matched.toString()}</h1>
       <h1>screen3 matched: {screen3Matched.toString()}</h1>
+      {<h2>{JSON.stringify(getScreens())}</h2>}
     </div>
   );
 }
