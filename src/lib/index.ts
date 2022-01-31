@@ -38,6 +38,10 @@ export function matchScreen(screenName: string) {
     .matches;
 }
 
+export function getScreens(): { [key: string]: string } {
+  return (_config?.theme?.screens as { [key: string]: string }) ?? {};
+}
+
 function checkConfigInitialized() {
   if (_config === null) {
     throw new Error(`tailwind config is empty.
