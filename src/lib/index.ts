@@ -22,11 +22,16 @@ export function getCurrentScreen(): string | null {
   return null;
 }
 
+/**
+ *
+ * @param screenName
+ * @returns boolean, null if SSR
+ */
 export function matchScreen(screenName: string) {
   checkConfigInitialized();
 
   if (typeof window === "undefined") {
-    return false;
+    return null;
   }
 
   const screens = _config!.theme.screens! as any;
